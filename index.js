@@ -165,9 +165,11 @@ function onYesButtonClick() {
   const nextQuestion = questions[currentQuestionIndex];
   const questionElement = document.getElementById('question');
   const questionNumberElement = document.getElementById('question-number');
+  const questionImageElement = document.getElementById('question-img');
 
   questionElement.textContent = nextQuestion.text;
   questionNumberElement.textContent = `질문 ${currentQuestionIndex + 1}`;
+  questionImageElement.setAttribute('src', nextQuestion.img);
 }
 
 // "아니오" 버튼 클릭 시 실행되는 함수
@@ -188,18 +190,22 @@ function onNoButtonClick() {
   const nextQuestion = questions[currentQuestionIndex];
   const questionElement = document.getElementById('question');
   const questionNumberElement = document.getElementById('question-number');
+  const questionImageElement = document.getElementById('question-img');
 
   questionElement.textContent = nextQuestion.text;
   questionNumberElement.textContent = `질문 ${currentQuestionIndex + 1}`;
+  questionImageElement.setAttribute('src', nextQuestion.img);
 }
 
 // 페이지 로드 시, 첫 번째 질문을 보여줌
 const firstQuestion = questions[0];
 const questionElement = document.getElementById('question');
 const questionNumberElement = document.getElementById('question-number');
+const questionImageElement = document.getElementById('question-img');
 
 questionElement.textContent = firstQuestion.text;
 questionNumberElement.textContent = `질문 ${currentQuestionIndex + 1}`;
+questionImageElement.setAttribute('src', firstQuestion.img);
 
 // "예" 버튼과 "아니오" 버튼에 이벤트 부여
 const yesButton = document.getElementById('yes-button');
